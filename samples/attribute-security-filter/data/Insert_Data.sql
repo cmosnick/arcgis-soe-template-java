@@ -67,6 +67,8 @@ INSERT INTO Filter_Group (Group_ID, Group_Name) VALUES (6, 'PG and E');
 DELETE FROM Agency;
 INSERT INTO Agency (Agency_ID, Agency_Name) SELECT ROW_NUMBER() OVER (ORDER BY Responsible_Agency), Responsible_Agency FROM Incident GROUP BY Responsible_Agency ORDER BY Responsible_Agency;
 
+UPDATE i SET i.Responsible_Agency_ID = a.Agency_ID FROM Incident i INNER JOIN Agency a ON (i.Responsible_Agency = a.Agency_Name);
+
 DELETE FROM Filter_Group_Agency;
 INSERT INTO Filter_Group_Agency(Group_ID, Agency_ID) SELECT (SELECT Group_ID FROM Filter_Group WHERE Group_Name = 'City Departments'), Agency_ID FROM Agency;
 INSERT INTO Filter_Group_Agency(Group_ID, Agency_ID) SELECT (SELECT Group_ID FROM Filter_Group WHERE Group_Name = 'Public'), Agency_ID FROM Agency WHERE Agency_Name IN ('Animal Care and Control', 'DPT', 'DPW', 'MUNI', 'Recology', 'SFMTA', 'Police', 'SFFD', 'Recreation and Parks');

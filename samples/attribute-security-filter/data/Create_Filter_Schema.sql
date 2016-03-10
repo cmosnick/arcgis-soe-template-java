@@ -60,6 +60,11 @@ CREATE TABLE Filter_Group_Agency (
 )
 GO
 
-CREATE INDEX I_Incident_1 ON Incident (Responsible_Agency)
+ALTER TABlE Incident ADD Responsible_Agency_ID INT
+	CONSTRAINT FK_Incident_Agency FOREIGN KEY (Responsible_Agency_ID)
+	REFERENCES Agency (Agency_ID)
 GO
 
+-- Run this after Insert_Data.sql
+--ALTER TABLE Incident DROP COLUMN Responsible_Agency
+--GO
