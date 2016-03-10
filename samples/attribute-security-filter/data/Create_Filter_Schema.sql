@@ -68,3 +68,6 @@ GO
 -- Run this after Insert_Data.sql
 --ALTER TABLE Incident DROP COLUMN Responsible_Agency
 --GO
+
+--CREATE NONCLUSTERED INDEX [I_Service_Request_1] ON Incident (Status, Opened, Responsible_Agency_ID)
+--GO
