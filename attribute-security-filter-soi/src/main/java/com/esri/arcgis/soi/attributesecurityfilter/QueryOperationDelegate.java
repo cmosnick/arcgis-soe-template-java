@@ -51,9 +51,14 @@ public class QueryOperationDelegate {
                 request.getOperationInput(), QueryMapServiceLayerOperationInput.class);
 
         Set<Integer> agencyIds = accessController.checkAccess(securityContext);
-        String agencyCondition = String.format("Responsible_Agency_ID IN (%1$s)",
-                Arrays.toString(agencyIds.toArray(new Integer[agencyIds.size()])));
-
+        StringBuilder agencyIdsString = new StringBuilder();
+        for (Integer agencyId : agencyIds) {
+            agencyIdsString.append(String.format("%1$d, ", agencyId));
+        }
+        if (agencyIdsString.length() > 0) {
+            agencyIdsString.delete(agencyIdsString.length() - 2, agencyIdsString.length());
+        }
+        String agencyCondition = String.format("Responsible_Agency_ID IN (%1$s)", agencyIdsString);
         String where = input.getWhere();
         if (StringUtils.isEmpty(where)) {
             where = agencyCondition;
@@ -73,6 +78,6 @@ public class QueryOperationDelegate {
                 request.getRequestProperties(),
                 request);
 
-        return handler.process(request, null);
+        return handler.process(filteredRequest, null);
     }
 }
