@@ -13,3 +13,4 @@ hs_err_pid*
 .idea/
 *.iml
 target/
+attribute-security-filter-soi/data/SanFranciscoOpenData_311CaseData.gdb/

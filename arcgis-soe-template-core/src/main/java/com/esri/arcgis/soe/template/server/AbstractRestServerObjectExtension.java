@@ -192,6 +192,7 @@ public abstract class AbstractRestServerObjectExtension implements
         logger.debug("Handling REST request ... ");
 
         try {
+            Cleaner.trackObjectsInCurrentThread();
             StopWatch timer = StopWatch.createAndStart();
 
             RestRequest request = new RestRequest(capabilities, resourceName,
@@ -252,8 +253,6 @@ public abstract class AbstractRestServerObjectExtension implements
             return handleError(500,
                     "A fatal error occured when handling REST request.", null);
         } finally {
-            // the SOI framework turns on Cleaner.trackObjectsInCurrentThread and doesn't release objects until it shuts down
-            // release objects after each request to prevent memory retention
             Cleaner.releaseAllInCurrentThread();
         }
     }

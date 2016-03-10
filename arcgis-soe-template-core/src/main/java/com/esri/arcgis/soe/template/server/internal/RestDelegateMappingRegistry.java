@@ -11,6 +11,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ApplicationObjectSupport;
 import org.springframework.core.MethodParameter;
 import org.springframework.core.annotation.Order;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.util.UriTemplate;
 

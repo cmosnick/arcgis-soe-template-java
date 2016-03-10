@@ -31,7 +31,7 @@ public class DefaultConfig {
 
     @Bean
     @Singleton
-    public RestDelegateMappings restInterceptorMappings() {
+    public RestDelegateMappings delegateMappings() {
         RestDelegateMappingRegistry registry = new RestDelegateMappingRegistry(
                 objectMapper);
         registry.configureDefaultArgumentResolvers();

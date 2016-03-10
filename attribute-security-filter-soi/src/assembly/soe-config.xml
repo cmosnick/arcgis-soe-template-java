@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ESRI.Configuration xmlns="http://schemas.esri.com/Desktop/AddIns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>${project.name}</Name>
+  <Description>${project.description}</Description>
+  <Date>${soe.timestamp}</Date>
+  <manifest/>
+  <Author/>
+  <Company/>
+  <Version>${project.version}</Version>
+  <Targets>
+    <Target name="server" version="10.3"/>
+  </Targets>
+  <AddInID>{${soe.uuid}}</AddInID>
+  <AddIn language="Java">
+    <ServerObjectType>
+      <Name>MapServer</Name>
+      <ExtensionTypes>
+        <ExtensionType class="com.esri.arcgis.soi.attributesecurityfilter.AttributeSecurityFilter" id="com.esri.arcgis.soi.attributesecurityfilter.AttributeSecurityFilter" library="${project.artifactId}-${project.version}.jar">
+          <Name>${project.name}</Name>
+          <DisplayName>Attribute Security Filter</DisplayName>
+          <Description>${project.description}</Description>
+          <Properties/>
+          <Info>
+            <DefaultWebCapabilities/>
+            <AllWebCapabilities/>
+            <SupportsSOAP>false</SupportsSOAP>
+            <SupportsREST>true</SupportsREST>
+            <SupportsInterceptor>true</SupportsInterceptor>
+            <hasManagerPropertiesConfigurationPane>false</hasManagerPropertiesConfigurationPane>
+          </Info>
+          <Resources>
+            <WSDL/>
+          </Resources>
+        </ExtensionType>
+      </ExtensionTypes>
+    </ServerObjectType>
+  </AddIn>
+</ESRI.Configuration>
