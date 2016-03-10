@@ -9,8 +9,9 @@
     <description>A template project for creating Server Objec Extensions and Server Object Interceptors</description>
     <packaging>pom</packaging>
     <modules>
-        <module>attribute-security-filter-soi</module>
         <module>arcgis-soe-template-core</module>
+        <module>samples/attribute-security-filter-soi</module>
+        <module>arcgis-soe-template</module>
     </modules>
     <properties>
         <jdkVersion>1.8</jdkVersion>

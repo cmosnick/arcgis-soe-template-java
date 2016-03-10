@@ -8,14 +8,14 @@
   <Company/>
   <Version>${project.version}</Version>
   <Targets>
-    <Target name="server" version="10.3"/>
+    <Target name="server" version="10.4"/>
   </Targets>
   <AddInID>{${soe.uuid}}</AddInID>
   <AddIn language="Java">
     <ServerObjectType>
       <Name>MapServer</Name>
       <ExtensionTypes>
-        <ExtensionType class="com.esri.arcgis.soi.attributesecurityfilter.AttributeSecurityFilter" id="com.esri.arcgis.soi.attributesecurityfilter.AttributeSecurityFilter" library="${project.artifactId}-${project.version}.jar">
+        <ExtensionType class="com.esri.arcgis.soi.AttributeSecurityFilter" id="com.esri.arcgis.soi.AttributeSecurityFilter" library="${project.artifactId}-${project.version}.jar">
           <Name>${project.name}</Name>
           <DisplayName>Attribute Security Filter</DisplayName>
           <Description>${project.description}</Description>

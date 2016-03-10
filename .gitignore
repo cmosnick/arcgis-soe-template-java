@@ -14,3 +14,5 @@ hs_err_pid*
 *.iml
 target/
 attribute-security-filter-soi/data/SanFranciscoOpenData_311CaseData.gdb/
+samples/attribute-security-filter-soi/data/SanFranciscoOpenData_311CaseData.gdb/a00000001.TablesByName.atx
+samples/attribute-security-filter-soi/data/SanFranciscoOpenData_311CaseData.gdb/
