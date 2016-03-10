@@ -74,3 +74,19 @@ INSERT INTO Filter_Group_Agency(Group_ID, Agency_ID) SELECT (SELECT Group_ID FRO
 INSERT INTO Filter_Group_Agency(Group_ID, Agency_ID) SELECT (SELECT Group_ID FROM Filter_Group WHERE Group_Name = 'Clear Channel'), Agency_ID FROM Agency WHERE Agency_Name = 'Clear Channel';
 INSERT INTO Filter_Group_Agency(Group_ID, Agency_ID) SELECT (SELECT Group_ID FROM Filter_Group WHERE Group_Name = 'US Postal Service'), Agency_ID FROM Agency WHERE Agency_Name = 'US Postal Service';
 INSERT INTO Filter_Group_Agency(Group_ID, Agency_ID) SELECT (SELECT Group_ID FROM Filter_Group WHERE Group_Name = 'PG and E'), Agency_ID FROM Agency WHERE Agency_Name = 'PG and E';
+
+DELETE FROM Filter_User;
+INSERT INTO Filter_User (User_ID, User_Name) VALUES (1, 'call_center_user');
+INSERT INTO Filter_User (User_ID, User_Name) VALUES (2, 'public_user');
+INSERT INTO Filter_User (User_ID, User_Name) VALUES (3, 'recology_user');
+INSERT INTO Filter_User (User_ID, User_Name) VALUES (4, 'clear_channel_user');
+INSERT INTO Filter_User (User_ID, User_Name) VALUES (5, 'usps_user');
+INSERT INTO Filter_User (User_ID, User_Name) VALUES (6, 'pge_user');
+
+INSERT INTO Filter_User_Group (User_ID, Group_ID) SELECT (SELECT User_ID from Filter_User WHERE User_Name = 'call_center_user'), Group_ID FROM Filter_Group WHERE Group_Name = 'City Departments';
+INSERT INTO Filter_User_Group (User_ID, Group_ID) SELECT (SELECT User_ID from Filter_User WHERE User_Name = 'public_user'), Group_ID FROM Filter_Group WHERE Group_Name = 'Public';
+INSERT INTO Filter_User_Group (User_ID, Group_ID) SELECT (SELECT User_ID from Filter_User WHERE User_Name = 'recology_user'), Group_ID FROM Filter_Group WHERE Group_Name = 'Recology';
+INSERT INTO Filter_User_Group (User_ID, Group_ID) SELECT (SELECT User_ID from Filter_User WHERE User_Name = 'clear_channel_user'), Group_ID FROM Filter_Group WHERE Group_Name = 'Clear Channel';
+INSERT INTO Filter_User_Group (User_ID, Group_ID) SELECT (SELECT User_ID from Filter_User WHERE User_Name = 'usps_user'), Group_ID FROM Filter_Group WHERE Group_Name = 'US Postal Service';
+INSERT INTO Filter_User_Group (User_ID, Group_ID) SELECT (SELECT User_ID from Filter_User WHERE User_Name = 'pge_user'), Group_ID FROM Filter_Group WHERE Group_Name = 'PG and E';
+
