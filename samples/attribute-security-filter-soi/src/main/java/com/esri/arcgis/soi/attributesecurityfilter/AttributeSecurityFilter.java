@@ -40,7 +40,7 @@ public class AttributeSecurityFilter extends AbstractRestServerObjectInterceptor
             sqlWorkspace = new SqlWorkspace(workspace);
         } catch (IOException e) {
             throw new ServerObjectExtensionException(
-                    "The workspace containing the filter schema must an SQL workspace (e.g. from a query layer).");
+                    "The workspace containing the filter schema must be a SQL workspace (i.e. from a query layer).");
         }
         ConfigurableListableBeanFactory beanFactory = applicationContext
                 .getBeanFactory();

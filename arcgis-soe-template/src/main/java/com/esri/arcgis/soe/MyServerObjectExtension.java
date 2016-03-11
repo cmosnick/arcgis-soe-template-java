@@ -18,7 +18,6 @@ public class MyServerObjectExtension extends AbstractRestServerObjectInterceptor
         super.doConfigure(applicationContext);
 
         applicationContext.register(MyServerObjectExtensionConfig.class);
-
     }
 
     @Override
