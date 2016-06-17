@@ -81,7 +81,7 @@ public abstract class AbstractRestServerObjectExtension implements
         } catch (Exception ex) {
             logger.error("Initialization failed.", ex);
         } catch (java.lang.Error error) {
-            logger.error("A fatal error occured during initialization.", error);
+            logger.error("A fatal error occurred during initialization.", error);
         }
     }
 
@@ -231,7 +231,7 @@ public abstract class AbstractRestServerObjectExtension implements
                 });
             } else {
                 logger.debug("No delegate configured for '{}'. ", path);
-                if (isInterceptor) {
+                if (!isInterceptor) {
                     logger.warn("Cannot find delegate for path '{}'.", path);
                     throw new ServerObjectExtensionException(String.format("The resource/operation %1$s does not exist " +
                             "or access is forbidden.", path));
@@ -248,10 +248,10 @@ public abstract class AbstractRestServerObjectExtension implements
             logger.error("Failed to handle REST request.", ex);
             return handleError(ex);
         } catch (java.lang.Error error) {
-            logger.error("A fatal error occured when handling REST request.",
+            logger.error("A fatal error occurred when handling REST request.",
                     error);
             return handleError(500,
-                    "A fatal error occured when handling REST request.", null);
+                    "A fatal error occurred when handling REST request.", null);
         } finally {
             Cleaner.releaseAllInCurrentThread();
         }

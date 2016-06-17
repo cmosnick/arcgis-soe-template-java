@@ -6,7 +6,7 @@
     <artifactId>arcgis-soe-template-java</artifactId>
     <version>0.0.1</version>
     <name>arcgis-soe-template-java</name>
-    <description>A template project for creating Server Objec Extensions and Server Object Interceptors</description>
+    <description>A template project for creating Server Object Extensions and Server Object Interceptors</description>
     <packaging>pom</packaging>
     <modules>
         <module>arcgis-soe-template-core</module>

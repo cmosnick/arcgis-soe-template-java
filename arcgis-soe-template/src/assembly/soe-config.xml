@@ -25,7 +25,7 @@
             <AllWebCapabilities/>
             <SupportsSOAP>false</SupportsSOAP>
             <SupportsREST>true</SupportsREST>
-            <SupportsInterceptor>true</SupportsInterceptor>
+            <SupportsInterceptor>false</SupportsInterceptor>
             <hasManagerPropertiesConfigurationPane>false</hasManagerPropertiesConfigurationPane>
           </Info>
           <Resources>
