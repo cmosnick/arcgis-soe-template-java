@@ -48,12 +48,12 @@ public abstract class AbstractRestServerObjectInterceptor extends
             return JSONConverter.toString(handleError(ex));
         } catch (java.lang.Error error) {
             getLogger().error(
-                    "A fatal error occured when handling schema request.",
+                    "A fatal error occurred when handling schema request.",
                     error);
             return JSONConverter
                     .toString(handleError(
                             500,
-                            "A fatal error occured when handling schema request.",
+                            "A fatal error occurred when handling schema request.",
                             null));
         }
     }
@@ -80,10 +80,10 @@ public abstract class AbstractRestServerObjectInterceptor extends
     public String handleStringRequest(String capabilities, String request)
             throws IOException, AutomationException {
         // TODO: Send appropriate error response for SOAP request
-        getLogger().warn("SOAP request are not allowed.");
+        getLogger().warn("SOAP requests are not allowed.");
         return JSONConverter
                 .toString(handleError(new ServerObjectExtensionException(
-                        "SOAP request are not allowed.")));
+                        "SOAP requests are not allowed.")));
     }
 
     @Override
@@ -94,6 +94,6 @@ public abstract class AbstractRestServerObjectInterceptor extends
         // TODO: Send appropriate error response for OGC request
         getLogger().warn("WMS and WFS requests are not allowed.");
         return handleError(new ServerObjectExtensionException(
-                "WMS and WFS request are not allowed."));
+                "WMS and WFS requests are not allowed."));
     }
 }
